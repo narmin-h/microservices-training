@@ -12,7 +12,7 @@ This repository contains links to various technical presentations and talks.
 
 ## How to Use
 1. Click on the "View Presentation" link for the topic you're interested in
-2. Presentations are online available at [gamma.com](https://gamma.app/)
+2. Presentations are online available at [gamma.app](https://gamma.app/)
 
 ## Contributing
 Feel free to suggest improvements or report issues by opening a GitHub issue.
