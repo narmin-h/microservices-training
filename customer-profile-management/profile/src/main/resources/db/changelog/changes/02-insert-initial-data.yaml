@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      description: "Insert data into the database"
+      author: Narmin Huseynli
+      changes:
+        - sql:
+            sql:
+              INSERT INTO CUSTOMER (name,email)
+              VALUES ('USER1','aaa@gmail.com');
+        - sql:
+            sql:
+              INSERT INTO CUSTOMER (name,email)
+              VALUES ('USER2','bbb@gmail.com');
+
+        - sql:
+            sql:
+              INSERT INTO CUSTOMER (name,email)
+              VALUES ('USER3','ccc@gmail.com');

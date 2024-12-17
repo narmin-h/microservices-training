@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/db.changelog-profile.yaml
+      relativeToChangelogFile: false
