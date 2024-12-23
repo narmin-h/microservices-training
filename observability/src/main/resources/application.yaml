@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+
+management:
+  tracing:
+    enabled: true
+
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
+    endpoint:
+      shutdown:
+        enabled: true
+      health:
+        probes:
+          enabled: true
+    info:
+      env:
+        enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_URL:http://localhost:9411/api/v2/spans}
+
+spring:
+  application:
+    name: "observability"
+
+#logging:
+#  pattern:
+#    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+

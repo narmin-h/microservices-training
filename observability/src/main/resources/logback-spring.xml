@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+
+    <springProperty scope="context" name="logstashHost" source="LOGSTASH_HOST" defaultValue="localhost"/>
+    <springProperty scope="context" name="logstashPort" source="LOGSTASH_PORT" defaultValue="5044"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{HH:mm:ss.SSS} [%thread] [${springAppName},%X{traceId:-},%X{spanId:-}] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>${LOGSTASH_HOST}:${LOGSTASH_PORT}</destination>
+
+        <!-- Add these lines for connection retry -->
+        <keepAliveDuration>5 minutes</keepAliveDuration>
+        <reconnectionDelay>1 second</reconnectionDelay>
+        <writeTimeout>5 seconds</writeTimeout>
+
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeMdc>true</includeMdc>
+            <customFields>{"app_name":"${springAppName}"}</customFields>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="LOGSTASH"/>
+    </root>
+
+    <!-- Add these lines for debugging connection issues -->
+    <logger name="net.logstash.logback" level="DEBUG"/>
+</configuration>
