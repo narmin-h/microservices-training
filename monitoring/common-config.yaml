@@ -1,0 +1,4 @@
+services:
+  network-bank-service:
+    networks:
+      - vipbank
