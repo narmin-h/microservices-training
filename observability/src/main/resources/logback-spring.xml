@@ -3,8 +3,9 @@
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
     <springProperty scope="context" name="springAppName" source="spring.application.name"/>
-<!--    <springProperty scope="context" name="logstashHost" source="LOGSTASH_HOST" defaultValue="localhost"/>-->
-<!--    <springProperty scope="context" name="logstashPort" source="LOGSTASH_PORT" defaultValue="5044"/>-->
+
+    <springProperty scope="context" name="logstashHost" source="LOGSTASH_HOST" defaultValue="localhost"/>
+    <springProperty scope="context" name="logstashPort" source="LOGSTASH_PORT" defaultValue="5044"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
