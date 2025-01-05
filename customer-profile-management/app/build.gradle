@@ -5,9 +5,9 @@ ext {
 
 dependencies {
 	implementation project(':profile')
+	implementation project(':onboarding')
 	implementation 'org.liquibase:liquibase-core'
-	implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:3.2.0'
-
+	implementation 'org.springframework.kafka:spring-kafka'
 
 	runtimeOnly 'org.postgresql:postgresql'
 }

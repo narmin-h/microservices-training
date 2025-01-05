@@ -1,3 +1,4 @@
 rootProject.name = 'customer-profile-management'
 include 'app'
 include 'profile'
+include 'onboarding'
