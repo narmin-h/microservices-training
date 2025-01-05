@@ -1,0 +1,4 @@
+rootProject.name = 'account'
+include 'app'
+include 'creation'
+include 'statement'
