@@ -1,33 +1,11 @@
 spring:
-  datasource:
-    url: ${SPRING_DATASOURCE_URL :jdbc:postgresql://localhost:5432/vip_bank}
-    username: ${SPRING_DATASOURCE_USERNAME :banking_user}
-    password: ${SPRING_DATASOURCE_PASSWORD :password}
-    driver-class-name: org.postgresql.Driver
-
-  jpa:
-    hibernate:
-      ddl-auto: none
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-
-
-  liquibase:
-    change-log: classpath:/db/changelog/db.changelog-master.yaml
-    enabled: true
-
   kafka:
     producer:
       bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVER:localhost:9092}
-      #bootstrap-servers: ${HOSTNAME:localhost:9092}
-      #      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      #      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      #      acks: all
-      #      acks: 1
-      acks: 0
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      #acks: 0
       retries: 10
       properties:
         max:
@@ -61,3 +39,5 @@ spring:
               packages: "*"
       group-id: customer-events
 
+server:
+  port: 8081

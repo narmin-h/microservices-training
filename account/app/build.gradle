@@ -1,0 +1,5 @@
+dependencies {
+    implementation project(':creation')
+    implementation project(':statement')
+    implementation 'org.springframework.kafka:spring-kafka'
+}
