@@ -6,6 +6,8 @@ ext {
 dependencies {
 	implementation project(':profile')
 	implementation project(':onboarding')
+	implementation project(':kyc')
+	implementation project(':customer-core')
 	implementation 'org.liquibase:liquibase-core'
 	implementation 'org.springframework.kafka:spring-kafka'
 

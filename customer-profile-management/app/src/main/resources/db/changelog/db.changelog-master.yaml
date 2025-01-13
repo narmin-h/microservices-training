@@ -2,3 +2,6 @@ databaseChangeLog:
   - include:
       file: classpath:/db/changelog/db.changelog-profile.yaml
       relativeToChangelogFile: false
+  - include:
+      file: classpath:/db/changelog/db.changelog-onboarding.yaml
+      relativeToChangelogFile: false

@@ -59,5 +59,9 @@ spring:
           json:
             trusted:
               packages: "*"
-      group-id: customer-events
+#      group-id: customer-events
 
+application:
+  customer:
+    validation:
+      enabled: true

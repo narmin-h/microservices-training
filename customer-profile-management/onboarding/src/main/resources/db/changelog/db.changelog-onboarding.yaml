@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: changes/01-onboarding-create-table.yaml
+      relativeToChangelogFile: true
