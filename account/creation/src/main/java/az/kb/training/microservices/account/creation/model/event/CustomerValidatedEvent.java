@@ -1,5 +1,6 @@
 package az.kb.training.microservices.account.creation.model.event;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,9 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AccountCreationFailedEvent {
+public class CustomerValidatedEvent {
 
     private Long id;
     private String fullName;
-    private String message; ;
 }

@@ -37,7 +37,13 @@ spring:
           json:
             trusted:
               packages: "*"
-      group-id: customer-events
+      group-id: customer-account-events
 
 server:
   port: 8081
+
+
+application:
+  account:
+    creation:
+      enabled: true
