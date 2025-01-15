@@ -1,5 +1,7 @@
-package az.kb.training.microservices.customer.config;
+package az.kb.training.microservices.customer.customercore.config;
 
+
+import az.kb.training.microservices.customer.customercore.model.event.CustomerCreatedEvent;
 import jakarta.validation.constraints.NotEmpty;
 import java.util.HashMap;
 import java.util.Map;
@@ -69,5 +71,4 @@ public class KafkaProducerConfig {
     KafkaTemplate<String, Object> kafkaTemplate(ProducerFactory<String, Object> producerFactory) {
         return new KafkaTemplate<>(producerFactory);
     }
-
 }

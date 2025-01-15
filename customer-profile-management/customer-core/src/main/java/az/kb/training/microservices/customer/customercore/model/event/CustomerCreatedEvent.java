@@ -1,4 +1,4 @@
-package az.kb.training.microservices.customer.onboarding.model.event;
+package az.kb.training.microservices.customer.customercore.model.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerCreatedEvent {
-    private String firstName;
-    private String lastName;
-    private String email;
+   private Long id;
+   private String fullName;
 }

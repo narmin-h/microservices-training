@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: changes/01-onboarding-create-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: changes/02-outbox-table.yaml
+      relativeToChangelogFile: true

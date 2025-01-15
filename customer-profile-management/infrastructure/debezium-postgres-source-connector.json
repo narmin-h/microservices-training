@@ -1,0 +1,20 @@
+{
+    "name": "debezium-postgres-source-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+        "tasks.max": "1",
+        "database.hostname": "db",
+        "database.port": "5432",
+        "database.user": "banking_user",
+        "database.password": "password",
+        "database.dbname" : "vip_bank",
+        "table.include.list": "public.outbox",
+        "plugin.name": "pgoutput",
+        "transforms": "outbox",
+        "transforms.outbox.type": "io.debezium.transforms.outbox.EventRouter",
+        "transforms.outbox.route.by.field": "destination",
+        "transforms.outbox.table.field.event.key": "id",
+        "transforms.outbox.table.field.event.payload": "payload",
+        "topic.prefix": "customer-validation"
+    }
+}
