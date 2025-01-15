@@ -15,6 +15,6 @@
         "transforms.outbox.route.by.field": "destination",
         "transforms.outbox.table.field.event.key": "id",
         "transforms.outbox.table.field.event.payload": "payload",
-        "topic.prefix": "customer-creation"
+        "topic.prefix": "customer-validation"
     }
 }
