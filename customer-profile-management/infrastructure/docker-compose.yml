@@ -72,6 +72,21 @@ services:
     networks:
       - spring-network
 
+  axonserver:
+    image: 'axoniq/axonserver:latest'
+    environment:
+      - 'AXONIQ_AXONSERVER_STANDALONE=TRUE'
+      - 'AXONIQ_AXONSERVER_NAME=VIP BANK'
+      - 'AXONIQ_AXONSERVER_DEVMODE_ENABLED=true'
+    ports:
+      - '8024:8024'
+      - '8124:8124'
+    volumes:
+      - /Users/narminhuseynli/Desktop/training-materials/axonserver/data:/axonserver/data
+      - /Users/narminhuseynli/Desktop/training-materials/axonserver/events:/axonserver/events
+      - /Users/narminhuseynli/Desktop/training-materials/axonserver/config:/axonsever/config
+    networks:
+      - spring-network
 
 networks:
   spring-network:

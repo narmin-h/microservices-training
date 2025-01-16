@@ -1,1 +1,11 @@
+#axon:
+#  eventhandling:
+#    processors:
+#      account-group:
+#        mode: subscribing
+#  axonserver:
+#    servers: localhost:8124
+
+
+
 

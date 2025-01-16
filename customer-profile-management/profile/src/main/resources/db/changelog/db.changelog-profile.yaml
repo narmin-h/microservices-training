@@ -5,3 +5,6 @@ databaseChangeLog:
   - include:
       file: changes/02-insert-initial-data.yaml
       relativeToChangelogFile: true
+  - include:
+      file: changes/04-create-transaction-table.yaml
+      relativeToChangelogFile: true
