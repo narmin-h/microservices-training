@@ -1,0 +1,9 @@
+
+dependencies {
+    implementation project(':processing')
+    implementation project(':shared')
+    implementation project(':transaction')
+    implementation 'org.axonframework:axon-spring-boot-starter:4.10.3'
+    runtimeOnly 'org.postgresql:postgresql'
+}
+

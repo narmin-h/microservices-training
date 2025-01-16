@@ -1,0 +1,5 @@
+rootProject.name = 'payment'
+include 'app'
+include 'processing'
+include 'transaction'
+include 'shared'

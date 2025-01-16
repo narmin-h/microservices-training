@@ -1,0 +1,5 @@
+
+dependencies {
+    implementation project(':shared')
+    implementation 'org.axonframework:axon-spring-boot-starter:4.10.3'
+}

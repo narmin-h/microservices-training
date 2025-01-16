@@ -1,0 +1,80 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.0'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+
+bootJar {
+	enabled = true
+	mainClass = 'az.kb.training.microservices.payment.AppApplication'
+}
+
+
+jar {
+	enabled = false
+}
+
+java {
+	sourceCompatibility = '21'
+	targetCompatibility = '21'
+}
+
+wrapper {
+	gradleVersion = '8.11.1'
+}
+
+dependencies {
+	implementation project('app')
+}
+
+
+allprojects {
+
+	apply plugin: 'java'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	group = 'az.kb.training.microservices'
+	version = '1.0.0'
+
+	java {
+		sourceCompatibility = '21'
+		targetCompatibility = '21'
+	}
+
+	repositories {
+		mavenCentral()
+	}
+
+	configurations {
+		compileOnly {
+			extendsFrom annotationProcessor
+		}
+	}
+
+	dependencies {
+		implementation 'org.springframework.boot:spring-boot-starter-validation'
+		implementation 'org.springframework.boot:spring-boot-starter-web'
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	}
+}
+
+subprojects {
+	bootJar {
+		enabled = false
+	}
+
+	jar {
+		enabled = true
+	}
+
+	tasks.named('test') {
+		useJUnitPlatform()
+	}
+}
+
+
