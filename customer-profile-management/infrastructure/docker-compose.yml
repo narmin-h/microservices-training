@@ -82,9 +82,11 @@ services:
       - '8024:8024'
       - '8124:8124'
     volumes:
-      - /Users/narminhuseynli/Desktop/training-materials/axonserver/data:/axonserver/data
-      - /Users/narminhuseynli/Desktop/training-materials/axonserver/events:/axonserver/events
-      - /Users/narminhuseynli/Desktop/training-materials/axonserver/config:/axonsever/config
+      - /Users/narminhuseynli/Desktop/microservices-training/axonserver/data:/axonserver/data
+      - /Users/narminhuseynli/Desktop/microservices-training/axonserver/events:/axonserver/events
+      - /Users/narminhuseynli/Desktop/microservices-training/axonserver/config:/axonsever/config
+    depends_on:
+      - db
     networks:
       - spring-network
 

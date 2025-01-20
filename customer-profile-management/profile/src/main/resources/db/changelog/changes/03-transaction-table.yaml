@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025-01-16
+      author: Narmin Huseynli
+      changes:
+        - createTable:
+            tableName: transaction
+            columns:
+              - column:
+                  name: paymentId
+                  type: bigint
+              - column:
+                  name: accountId
+                  type: bigint
+              - column:
+                  name: amount
+                  type: bigint
+              - column:
+                  name: currency
+                  type: varchar(100)
+              - column:
+                  name: status
+                  type: varchar(100)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
